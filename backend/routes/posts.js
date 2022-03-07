@@ -47,7 +47,7 @@ router.patch("/:post_id", authenticateToken, async (req, res) => {
         }
         return res.status(401).json({message: "You cannot delete this post"});
     } catch(err) {
-
+        return res.status(400).json(err);
     }
 });
 
