@@ -32,6 +32,25 @@ router.post("/", authenticateToken, async (req, res) => {
 
 });
 
+// Update Post
+router.patch("/:post_id", authenticateToken, async (req, res) => {
+    const {user_id} = req.user;
+    const {post_description, post_image_url} = req.body; 
+    try {
+        const [post] = await executeSQL("SELECT * FROM Post WHERE post_id = ? AND post_owner = ?", [req.params.post_id, user_id]);
+
+        if(post) {
+            // The user requesting to edit a post is the owner of the post
+            // we can now edit the post
+            await executeSQL("UPDATE Post SET post_description = ?, post_image_url = ? WHERE post_id = ?", [post_description, post_image_url, req.params.post_id]);
+            return res.status(201).json({message: "Post updated!"});
+        }
+        return res.status(401).json({message: "You cannot delete this post"});
+    } catch(err) {
+
+    }
+});
+
 // Get List of users that have liked a post
 router.get("/:post_id/likes", async (req, res) => {
     try {
