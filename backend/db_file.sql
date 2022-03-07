@@ -10,7 +10,7 @@ CREATE TABLE User (
 
 CREATE TABLE Post (
     post_id VARCHAR(64) PRIMARY KEY NOT NULL UNIQUE,
-    post_owner VARCHAR(15) NOT NULL,
+    post_owner VARCHAR(64) NOT NULL,
     post_image_url varchar(256) NOT NULL,
     post_description TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -30,12 +30,12 @@ CREATE TABLE Likes (
 )ENGINE=INNODB;
 
 CREATE TABLE Comments (
+    comment_id VARCHAR(64) NOT NULL PRIMARY KEY UNIQUE,
     post_id VARCHAR(64) NOT NULL,
     user_id VARCHAR(64) NOT NULL,
     comment_body TEXT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 
-    PRIMARY KEY (post_id, user_id),
     FOREIGN KEY (post_id) REFERENCES Post(post_id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
 )ENGINE=INNODB;
