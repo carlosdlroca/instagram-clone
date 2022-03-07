@@ -51,6 +51,23 @@ router.patch("/:post_id", authenticateToken, async (req, res) => {
     }
 });
 
+// Delete Post
+router.delete("/:post_id", authenticateToken, async (req, res) => {
+    const {user_id} = req.user;
+
+    try {
+        const [post] = await executeSQL("SELECT * FROM Post WHERE post_id = ? AND post_owner = ?", [req.params.post_id, user_id]);
+        if(post) {
+            // Authenticated User owns the Post, we can proceed with Post deletion
+            await executeSQL("DELETE FROM Post WHERE post_id = ?", [req.params.post_id]);
+            return res.status(204).send();
+        }
+        return res.status(401).json({message: "You cannot delete this post"});
+    } catch(err) {
+        return res.status(400).json(err);
+    }
+});
+
 // Get List of users that have liked a post
 router.get("/:post_id/likes", async (req, res) => {
     try {
