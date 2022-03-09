@@ -1,0 +1,39 @@
+### Get Post Comments
+GET http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/comments
+
+
+### Create Post Comments admin2 22e0cfcd-fb1e-4750-b88d-96697fe1e196
+POST http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjIzMWUtZDlhYi00ODgzLWExODktMThkN2ViYjkyYjc5IiwidXNlcm5hbWUiOiIwMTAiLCJmaXJzdF9uYW1lIjoiQm90MyIsImxhc3RfbmFtZSI6IlNpbXBsZTMiLCJwcm9maWxlX2ltYWdlX3VybCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMDMtMDdUMTI6NDE6NDMuMDAwWiIsImlhdCI6MTY0NjYyODg2MX0.8GuCMBYqU12l_M_QSdGM2q886V8Ik3CXXX6TN_QzVyk
+Content-Type: application/json
+
+{
+    "comment_body": "This is a 5th comment on a post" 
+}
+
+#### Update comment using correct user
+PATCH http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/comments/894ecc48-3a8b-4435-8853-97249ece1d10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjIzMWUtZDlhYi00ODgzLWExODktMThkN2ViYjkyYjc5IiwidXNlcm5hbWUiOiIwMTAiLCJmaXJzdF9uYW1lIjoiQm90MyIsImxhc3RfbmFtZSI6IlNpbXBsZTMiLCJwcm9maWxlX2ltYWdlX3VybCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMDMtMDdUMTI6NDE6NDMuMDAwWiIsImlhdCI6MTY0NjYyODg2MX0.8GuCMBYqU12l_M_QSdGM2q886V8Ik3CXXX6TN_QzVyk
+Content-Type: application/json
+
+{
+    "comment_body": "updated this comment"
+}
+
+### Update comment using incorrect user_owner
+PATCH http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/comments/894ecc48-3a8b-4435-8853-97249ece1d10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDZmZTQ1ZmMtMTExYi00M2Y2LWE1OTgtNzU5NjlmNmY5N2RmIiwidXNlcm5hbWUiOiJjYXJsb3MiLCJmaXJzdF9uYW1lIjoiQ2FybG9zIiwibGFzdF9uYW1lIjoiRGUgTGEgUm9jYSIsInByb2ZpbGVfaW1hZ2VfdXJsIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0wMy0wN1QxMTowMTozMC4wMDBaIiwiaWF0IjoxNjQ2NjkwMjgxfQ.80R0y8UcBNWMij8oeAQyGqtf5pcJZYlQX1xD_j0QpoA
+Content-Type: application/json
+
+{
+    "comment_body": "this should not work"
+}
+
+### Delete a comment that you have made
+DELETE http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/comments/894ecc48-3a8b-4435-8853-97249ece1d10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjIzMWUtZDlhYi00ODgzLWExODktMThkN2ViYjkyYjc5IiwidXNlcm5hbWUiOiIwMTAiLCJmaXJzdF9uYW1lIjoiQm90MyIsImxhc3RfbmFtZSI6IlNpbXBsZTMiLCJwcm9maWxlX2ltYWdlX3VybCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMDMtMDdUMTI6NDE6NDMuMDAwWiIsImlhdCI6MTY0NjYyODg2MX0.8GuCMBYqU12l_M_QSdGM2q886V8Ik3CXXX6TN_QzVyk
+
+
+### Trying to delete comment that is not yours
+DELETE http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/comments/894ecc48-3a8b-4435-8853-97249ece1d10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDZmZTQ1ZmMtMTExYi00M2Y2LWE1OTgtNzU5NjlmNmY5N2RmIiwidXNlcm5hbWUiOiJjYXJsb3MiLCJmaXJzdF9uYW1lIjoiQ2FybG9zIiwibGFzdF9uYW1lIjoiRGUgTGEgUm9jYSIsInByb2ZpbGVfaW1hZ2VfdXJsIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0wMy0wN1QxMTowMTozMC4wMDBaIiwiaWF0IjoxNjQ2NjkwMjgxfQ.80R0y8UcBNWMij8oeAQyGqtf5pcJZYlQX1xD_j0QpoA

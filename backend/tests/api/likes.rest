@@ -1,0 +1,21 @@
+###
+GET http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/likes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjIzMWUtZDlhYi00ODgzLWExODktMThkN2ViYjkyYjc5IiwidXNlcm5hbWUiOiIwMTAiLCJmaXJzdF9uYW1lIjoiQm90MyIsImxhc3RfbmFtZSI6IlNpbXBsZTMiLCJwcm9maWxlX2ltYWdlX3VybCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMDMtMDdUMTI6NDE6NDMuMDAwWiIsImlhdCI6MTY0NjYyODg2MX0.8GuCMBYqU12l_M_QSdGM2q886V8Ik3CXXX6TN_QzVyk
+Content-Type: application/json
+
+{
+    "post_id": "1d3809f8-5a06-4340-9238-0cc9d61d13f0"
+}
+
+###
+POST http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/likes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjIzMWUtZDlhYi00ODgzLWExODktMThkN2ViYjkyYjc5IiwidXNlcm5hbWUiOiIwMTAiLCJmaXJzdF9uYW1lIjoiQm90MyIsImxhc3RfbmFtZSI6IlNpbXBsZTMiLCJwcm9maWxlX2ltYWdlX3VybCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMDMtMDdUMTI6NDE6NDMuMDAwWiIsImlhdCI6MTY0NjYyODg2MX0.8GuCMBYqU12l_M_QSdGM2q886V8Ik3CXXX6TN_QzVyk
+
+
+### Admin Like
+POST http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/likes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNTU1MGU1YjUtMzIxNS00N2ZmLWE1YmUtYzYwMDNlZWIyMjMyIiwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiJBZG1pbmlzdHJhdG9yIiwibGFzdF9uYW1lIjoiQk9UIiwiaWF0IjoxNjQ2NjY5OTk3fQ.XAcSUBzuyfRmabtu89DJcRcwS3_2nb2kb4IA3vCikXI
+
+####
+GET http://localhost:8080/api/posts/1d3809f8-5a06-4340-9238-0cc9d61d13f0/likes
+

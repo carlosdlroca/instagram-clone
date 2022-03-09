@@ -1,0 +1,21 @@
+###
+POST http://localhost:8080/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjIzMWUtZDlhYi00ODgzLWExODktMThkN2ViYjkyYjc5IiwidXNlcm5hbWUiOiIwMTAiLCJmaXJzdF9uYW1lIjoiQm90MyIsImxhc3RfbmFtZSI6IlNpbXBsZTMiLCJwcm9maWxlX2ltYWdlX3VybCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMDMtMDdUMTI6NDE6NDMuMDAwWiIsImlhdCI6MTY0NjYyODg2MX0.8GuCMBYqU12l_M_QSdGM2q886V8Ik3CXXX6TN_QzVyk
+Content-Type: application/json
+
+{
+    "post_image_url": "www.google.com",
+    "post_description": "this is the first test post"
+}
+
+
+### Admin2 create Post
+POST http://localhost:8080/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjJlMGNmY2QtZmIxZS00NzUwLWI4OGQtOTY2OTdmZTFlMTk2IiwidXNlcm5hbWUiOiJhZG1pbjIiLCJmaXJzdF9uYW1lIjoiQWRtaW5pc3RyYXRvciIsImxhc3RfbmFtZSI6IkJPVDIiLCJpYXQiOjE2NDY2NzkyMDF9.hgiZsoH8GRyqNiCIGAsUsmjAJvI0E8cJ2_eMOFJWVQU
+Content-Type: application/json
+
+{
+    "post_image_url": "www.google.com",
+    "post_description": "This is my first post. What do you think?"
+}
+
