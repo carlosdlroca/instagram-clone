@@ -1,0 +1,9 @@
+.Footer {
+    margin-top: auto;
+    padding: 1rem;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+}
