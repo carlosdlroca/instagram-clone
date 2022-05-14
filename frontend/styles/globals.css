@@ -31,7 +31,7 @@ body, #__next {
 }
 
 a {
-  color: var(--color-primary, #6867AC);
+  color: var(--color-primary);
   font-size: clamp(1.8rem, 1vw - .2rem, 1.3rem);
 
   font-weight: 600;
@@ -42,5 +42,5 @@ a {
 }
 
 a:hover, a:focus {
-  color: var(--color-secondary, #CE7BB0);
+  color: var(--color-secondary);
 }
